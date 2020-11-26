@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurant_builder_pattern/observers/ui_provider.dart';
 import 'package:restaurant_builder_pattern/ui/main_screen.dart';
 
 class TheRestaurantWebApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'The Restaurant',
-      debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+    return ChangeNotifierProvider(
+      create: (BuildContext context) => ButtonState(),
+      child: MaterialApp(
+        title: 'The Restaurant',
+        debugShowCheckedModeBanner: false,
+        home: MainScreen(),
+      ),
     );
   }
 }
